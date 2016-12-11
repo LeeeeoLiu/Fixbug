@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cstdio>
-#include<conio.h>
+//#include<conio.h>
 #define maxsize 20
 
 
@@ -35,7 +35,7 @@ int EmptyQueue(Queue &Q)
     }
     else return 0;
 }
-void EnQueue(Queue &Q,Node *p)
+void EnQueue(Queue &Q,Node *&p)
 {
     if((Q.rear+1)%maxsize == Q.front)
         exit(1);
@@ -44,7 +44,7 @@ void EnQueue(Queue &Q,Node *p)
         Q.rear = (Q.rear+1) % maxsize;
     }
 }
-void DeQueue(Queue &Q,Node *p)
+void DeQueue(Queue &Q,Node *&p)
 {
     if(EmptyQueue(Q))
         exit(1);
@@ -53,7 +53,7 @@ void DeQueue(Queue &Q,Node *p)
         Q.front = (Q.front+1) % maxsize;
     }
 }
-void gethead(Queue &Q,Node *p)
+void gethead(Queue &Q,Node *&p)
 {
     if(!EmptyQueue(Q)){
         p = Q.base[Q.front];
@@ -70,17 +70,17 @@ void CreatTree(Tree &T)
     cout<<"请以父亲、孩子的形式输入节点讯息:"<<endl;
     cin>>f>>c;
     char star[] = "*";
-    while(strcmp(c,star))
+    while(strcmp(c,star)!=0)
     {
         p = (Node *)malloc(sizeof(Node));
         p -> firstchild = NULL;
         p -> nextsibling = NULL;
         strcpy(p->data,c);
         EnQueue(Q,p);
-        if(strcmp(f,star)) T=p;
+        if(strcmp(f,star)==0) T=p;
         else{
             gethead(Q,q);
-            while(!strcmp(q->data,f))
+            while(strcmp(q->data,f)!=0)
             {
                 DeQueue(Q,q);
             }
@@ -95,10 +95,8 @@ void CreatTree(Tree &T)
                 }
                 r -> nextsibling = p;
             }
-            cin>>f>>c;
-
         }
-
+        cin>>f>>c;
     }
 }
 
@@ -106,8 +104,9 @@ void preordertree(Node *T)
 {
     Node *p = T;
     if(p == NULL){
-        cout<<"该树为空"<<endl;
-        exit(1);
+//        cout<<"该树为空"<<endl;
+//        exit(1);
+        return;
     }
     else{
         cout<<p->data<<endl;
@@ -122,7 +121,7 @@ void leveltree(Node *T)
     Init(Q);
     cout<<"对该树进行层次遍历："<<endl;
     if(!T)
-        cout<<"该树为空"<<endl;
+        return;
     else
     {
         EnQueue(Q,p);
@@ -161,10 +160,15 @@ void menu(Node *&T)
     }
     switch (n)
     {
-        case 1:CreatTree(T);break;
-        case 2:printf("对域名进行深度优先遍历如下：\n");preordertree(T);break;
-        case 3:leveltree(T);break;
-        case 4:printf("谢谢使用");exit(-1);break;
+        case 1:CreatTree(T);
+            break;
+        case 2:printf("对域名进行深度优先遍历如下：\n");
+            preordertree(T);
+            break;
+        case 3:leveltree(T);
+            break;
+        case 4:printf("谢谢使用");
+            exit(-1);break;
     }
     menu(T);
 }
