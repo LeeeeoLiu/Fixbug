@@ -83,6 +83,7 @@ void CreatTree(Tree &T)
             while(strcmp(q->data,f)!=0)
             {
                 DeQueue(Q,q);
+                gethead(Q,q);
             }
             if(!(q -> firstchild))
                 q -> firstchild = p;
