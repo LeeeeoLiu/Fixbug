@@ -4,13 +4,13 @@
 
 #include<stdlib.h>    //头文件
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
+#include <jmorecfg.h>
 
 #define TRUE 1
 #define FALSE 0
 
-int visited[MAX_VERTEX_NUM];  //定义数组
+boolean visited[MAX_VERTEX_NUM];  //定义数组
 
 typedef struct ArcCell//对弧的定义
 
@@ -350,12 +350,12 @@ void print(MGraph *G) {
 void DFS(MGraph *G, int i)   //采用邻接矩阵存储法表示的从第n个顶点出发递归地深度优先搜索无向图G
 {
     visited[i] = TRUE;
-    printf("This node is;%d\n", G->vexs[i]);
+    printf("This node is;%s\n", G->vexs[i].name);
     int j;
     //printf("%c-->" ,G->vexs[i].name);  //打印顶点
     for (j = 0; j < G->vexnum; j++)
-        //if(!visited[j]&&G->arcs[i][j]==1)
-        DFS(G, j);
+        if (G->arcs[i][j].adj != INFINITY && !visited[j])
+            DFS(G, j);
 }
 
 
@@ -369,4 +369,3 @@ void DFSTraverse(MGraph *G) //对图G做深度优先遍历
         if (!visited[i]) //对未访问过的定点调用DFS，若是连通图，只会执行一次
             DFS(G, i);
 }
-
