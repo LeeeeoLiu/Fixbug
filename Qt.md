@@ -146,7 +146,7 @@ void MainWindow::Help_actionHelp_Slot()
 ```
 没懂?再举个例子
 ![](./pic/QQ20161221-8@2x.png)
-![](./pic/QQ20161221-9@2x.png)
+![](./pic/QQ20161221-11@2x.png)
 然后就会产生对应的响应函数
 ```
 void MainWindow::on_pushButton_pressed()
@@ -162,4 +162,5 @@ void MainWindow::on_pushButton_pressed()
 然后就 ok 了!
 ![](./pic/QQ20161221-10@2x.png)
 
-说得很简单,因为省略了具体的操作,但是我觉得原理懂了就差不多了.留了一个模板项目可以下载下来试试,吃透这个项目你的图形界面之路就没什么大问题了.
+## All in all
+说得很简单,因为省略了具体的操作,但是我觉得原理懂了就差不多了,VS 也差不多是这样,原理都差不多.留了一个模板项目(OpenGL_Template.zip)可以下载下来试试,吃透这个项目你的图形界面之路就没什么大问题了.
