@@ -163,4 +163,4 @@ void MainWindow::on_pushButton_pressed()
 ![](./pic/QQ20161221-10@2x.png)
 
 ## All in all
-说得很简单,因为省略了具体的操作,但是我觉得原理懂了就差不多了,VS 也差不多是这样,原理都差不多.留了一个模板项目(OpenGL_Template.zip)可以下载下来试试,吃透这个项目你的图形界面之路就没什么大问题了.
+说得很简单,因为省略了具体的操作,但是我觉得原理懂了就差不多了,VS 也差不多是这样,原理都差不多.留了一个模板项目([OpenGL_Template.zip](./OpenGL_Template.zip) )可以下载下来试试,吃透这个项目你的图形界面之路就没什么大问题了.
