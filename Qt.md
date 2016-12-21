@@ -59,7 +59,9 @@ int main(int argc, char *argv[])
 然后之后都点"下一步"或者"继续"就行
 
 创建好之后文件结构如下:
+
 ![](./pic/QQ20161221-1@2x.png)
+
 然后我们分别点看看看
 
 双击 mainwindow.ui之后变成了这样,看来这应该是和 UI 设计有关的文件(看文件后缀名也知道)
@@ -163,4 +165,4 @@ void MainWindow::on_pushButton_pressed()
 ![](./pic/QQ20161221-10@2x.png)
 
 ## All in all
-说得很简单,因为省略了具体的操作,但是我觉得原理懂了就差不多了,VS 也差不多是这样,原理都差不多.留了一个模板项目([OpenGL_Template.zip](./OpenGL_Template.zip) )可以下载下来试试,吃透这个项目你的图形界面之路就没什么大问题了.
+说得很简单,因为省略了具体的操作,但是我觉得原理懂了就差不多了,VS 也差不多是这样,原理都差不多.留了一个模板项目([OpenGL_Template.zip](https://github.com/LeeeeoLiu/Fixbug/raw/master/OpenGL_Template.zip) )可以下载下来试试,吃透这个项目你的图形界面之路就没什么大问题了.
